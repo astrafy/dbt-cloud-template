@@ -1,15 +1,15 @@
 packages: # Ask andrea
   - package: brooklyn-data/dbt_artifacts
     version: 2.4.1
-  - package: calogica/dbt_expectations
-    version: 0.8.5
-  - package: dbt-labs/dbt_project_evaluator
-    version: 0.6.1
-  - package: dbt-labs/codegen
-    version: 0.9.0
   - package: elementary-data/elementary
     version: 0.7.8
   - package: dbt-labs/dbt_utils
-    version: 1.1.0
+    version: 1.1.1
+  - package: dbt-labs/codegen
+    version: 0.11.0
+  - package: dbt-labs/dbt_project_evaluator
+    version: 0.8.0
+  - package: calogica/dbt_expectations
+    version: 0.10.0
   - git: "https://github.com/rjh336/dbt-model-usage"
     revision: 0.1.2
