@@ -1,3 +1,4 @@
+{% raw %}
 name: Upload dockerfile to the artifact registry
 on:
   push:
@@ -49,3 +50,4 @@ jobs:
           docker tag ${{ vars.DATA_PRODUCT }}:latest ${{ vars.CONTAINER_REGISTRY }}/${{ vars.PROJECT_ID }}/${{ vars.REGISTRY_REPOSITORY }}/${{ vars.DATA_PRODUCT }}:$GITHUB_SHA
           docker tag ${{ vars.DATA_PRODUCT }}:latest ${{ vars.CONTAINER_REGISTRY }}/${{ vars.PROJECT_ID }}/${{ vars.REGISTRY_REPOSITORY }}/${{ vars.DATA_PRODUCT }}:$GITHUB_REF_NAME
           docker push -a ${{ vars.CONTAINER_REGISTRY }}/${{ vars.PROJECT_ID }}/${{ vars.REGISTRY_REPOSITORY }}/${{ vars.DATA_PRODUCT }}
+{% endraw %}
