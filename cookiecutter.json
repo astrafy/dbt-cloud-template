@@ -1,4 +1,7 @@
 {
     "project_name": "Awesome dbt Project",
-    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}"
+    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "google_cloud_project_id": "awesome_project",
+    "database_id": "awesome_database",
+    "database_location": "EU"
 }
