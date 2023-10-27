@@ -1,3 +1,4 @@
+
 name: "{{ cookiecutter.project_slug }}"
 config-version: 2
 
@@ -19,7 +20,7 @@ clean-targets:
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 query-comment: # Ask andrea
-  comment: "{{ common.query_comment(node) }}"
+  comment: "{{ "{{" }} common.query_comment(node) {{ "}}" }}"
   job-label: True
 
 quoting: # Ask andrea
@@ -28,12 +29,12 @@ quoting: # Ask andrea
   identifier: true
 
 vars:
-  project_id: { { cookiecutter.google_cloud_project_id } }
-  database_id: { { cookiecutter.database_id } }
-  database_location: { { cookiecutter.database_location } }
+  project_id: {{ cookiecutter.google_cloud_project_id }}
+  database_id: {{ cookiecutter.database_id }}
+  database_location: {{ cookiecutter.database_location }}
 
 models:
-  { { cookiecutter.project_slug } }:
+  {{ cookiecutter.project_slug }}:
     raw:
       +materialized: table
     staging:
@@ -42,4 +43,5 @@ models:
       +materialized: table
 
   dbt_project_evaluator: # ask andrea
+    +enabled: '{{ "{{" }} '{{ "{{" }} env_var("DBT_ENV_NAME", "DEV") != "DEV" | as_bool {{ "}}" }}' {{ "}}" }}'
     +schema: dpe
