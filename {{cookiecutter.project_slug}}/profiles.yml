@@ -4,7 +4,7 @@ client-auth:
     # Service account
     sa:
       type: bigquery
-      project: "{{ {{ var('project_id') }} }}"
+      project: "{{ "{{" }} var('project_id') {{ "}}" }}"
       dataset: "{{ {{ var('database_id') }} }}"
       location: "{{ {{ var('database_id') }} }}"
       method: oauth
