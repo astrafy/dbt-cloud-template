@@ -1,3 +1,4 @@
+{% raw %}
 {% macro query_comment(node) %}
 
     {% set dag_run_id = '{{ invocation_id }}' %}
@@ -17,3 +18,4 @@
     {%- endif -%}
     {% do return(tojson(comment_dict)) %}
 {% endmacro %}
+{% endraw %}
