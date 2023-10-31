@@ -12,8 +12,5 @@ packages:
     version: 0.10.0
   - git: "https://github.com/rjh336/dbt-model-usage"
     revision: 0.1.2
-
-projects:
-{% for i in range(1, cookiecutter.num_of_projects+1) %}
-  - name: {{ cookiecutter['project_'~i] }}
-{% endfor %}
+# projects:
+#   - name: project_name
