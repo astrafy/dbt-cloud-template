@@ -1,3 +1,4 @@
+
 # Welcome to the dbt project for {{ cookiecutter.project_name }}
 
 ## Running the project
@@ -30,10 +31,10 @@ pre-commit run --hook-stage manual sqlfluff-fix --all-files
 ```bash
 pre-commit run --hook-stage commit yamllint
 ```
-
+{% raw %}
 ### Working with dbt-checkpoint
 - dbt-checkpoint is configured as a set of pre-commit hooks, so in most cases no explicit commands are needed. These hooks will ensure the dbt project is following standard convention. This will only list errors and will not fix any errors if found.
 - If you would like to run dbt-checkpoint manually, you can do so with the following command which will run it through pre-commit. Replace `{{dbt-checkpoint hook_id}}` with the name of the hook you want to run (e.g. `check-model-has-tests`).
 ```bash
 pre-commit run {{dbt-checkpoint hook_id}} --hook-stage commit --all-files
-
+{% endraw %}
